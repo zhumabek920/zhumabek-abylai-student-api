@@ -16,5 +16,5 @@ Spring Boot CRUD application for managing students.
 - Added Student entity and repository.
 - Implemented CRUD controller.
 - Improved UPDATE: PUT /api/students/{id} validates input and returns
-  404 Not Found for a nonexistent student instead of creating a new one.# zhumabek-abylai-student-api
+  404 Not Found for a nonexistent student instead of creating a new one.
 Author: Zhumabek Abylai
