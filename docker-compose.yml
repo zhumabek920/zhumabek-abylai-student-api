@@ -1,0 +1,42 @@
+name: zhumabek-abylai-student-api
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: zhumabek-abylai-postgres
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - zhumabek_abylai_pgdata:/var/lib/postgresql/data
+    networks:
+      - zhumabek-abylai-net
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  app:
+    build: .
+    image: zhumabek-abylai-student-api:v1.0-zhumabek-abylai
+    container_name: zhumabek-abylai-app
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/${POSTGRES_DB}
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD}
+      APP_VERSION: ${APP_VERSION}
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - zhumabek-abylai-net
+
+volumes:
+  zhumabek_abylai_pgdata:
+
+networks:
+  zhumabek-abylai-net:
