@@ -1,0 +1,13 @@
+# Build files
+.gradle/
+build/
+
+# IDE
+.idea/
+.vscode/
+
+# Secrets - never commit
+.env
+
+# Logs
+*.log
