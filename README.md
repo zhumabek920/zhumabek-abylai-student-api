@@ -20,3 +20,4 @@ Spring Boot CRUD application for managing students.
 Author: Zhumabek Abylai
 
 CI trigger test by Zhumabek Abylai (ID 38304)
+Auto-trigger check by Zhumabek Abylai
