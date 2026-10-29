@@ -1,5 +1,5 @@
-# Student API v1.0 - Zhumabek Abylai
-## Student API
+# Student API v1.0 - documentation by Zhumabek Abylai
+	## Student API
 
 Spring Boot CRUD application for managing students.
 
