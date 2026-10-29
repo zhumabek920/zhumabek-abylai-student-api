@@ -18,3 +18,5 @@ Spring Boot CRUD application for managing students.
 - Improved UPDATE: PUT /api/students/{id} validates input and returns
   404 Not Found for a nonexistent student instead of creating a new one.
 Author: Zhumabek Abylai
+
+CI trigger test by Zhumabek Abylai (ID 38304)
