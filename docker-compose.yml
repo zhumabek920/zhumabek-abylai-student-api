@@ -20,7 +20,7 @@ services:
 
   app:
     build: .
-    image: zhumabek-abylai-student-api:v1.0-zhumabek-abylai
+    image: zhumabek-abylai-student-api:v1.1-zhumabek-abylai
     container_name: zhumabek-abylai-app
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/${POSTGRES_DB}

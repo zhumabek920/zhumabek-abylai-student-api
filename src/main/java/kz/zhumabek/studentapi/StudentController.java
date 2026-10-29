@@ -1,6 +1,7 @@
 package kz.zhumabek.studentapi;
 
 import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
@@ -14,14 +15,17 @@ public class StudentController {
 
     private final StudentRepository repository;
 
+    @Value("${app.version}")
+    private String version;
+
     public StudentController(StudentRepository repository) {
         this.repository = repository;
     }
 
-    // Info: shows the author of the project
+    // Info: shows the author and version of the project
     @GetMapping("/info")
     public Map<String, String> info() {
-        return Map.of("author", "Zhumabek Abylai", "studentId", "38304");
+        return Map.of("author", "Zhumabek Abylai", "studentId", "38304", "version", version);
     }
 
     // READ all
