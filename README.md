@@ -1,4 +1,4 @@
-
+# Student API - documentation by Zhumabek Abylai
 ## Student API
 
 Spring Boot CRUD application for managing students.
