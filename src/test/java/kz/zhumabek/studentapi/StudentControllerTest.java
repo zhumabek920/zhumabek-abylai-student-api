@@ -38,7 +38,7 @@ class StudentControllerTest {
     @Test
     void infoShowsStudentName() {
         Map<String, String> info = controller.info();
-        assertEquals("Wrong Name", info.get("author"));
+        assertEquals("Zhumabek Abylai", info.get("author"));
     }
 
     @Test
